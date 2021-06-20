@@ -4,9 +4,13 @@ class EditTable extends StatelessWidget {
   const EditTable({
     Key? key,
     required this.child,
+    required this.headers,
+    required this.values,
   }) : super(key: key);
 
   final Widget child;
+  final List<Text> headers;
+  final List<TextField> values;
 
   @override
   Widget build(BuildContext context) {

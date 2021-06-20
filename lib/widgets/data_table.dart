@@ -10,8 +10,6 @@ class DataTables extends GetView<TableSideController> {
 
   @override
   Widget build(BuildContext context) {
-    return EditTable(
-      child: Container(),
-    );
+    return Container();
   }
 }
