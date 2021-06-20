@@ -1,44 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:stock_app/controllers/controller.dart';
+import 'package:stock_app/widgets/widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 40.0,
-            width: double.infinity,
-            color: Colors.black,
-          ),
-          // Top side
-          Expanded(
-            child: Row(
-              children: [
-                Container(
-                  width: 200.0,
-                  height: double.infinity,
-                  color: Colors.red,
-                ),
-                // Left side,
-                Expanded(
-                  child: Container(
-                    color: Colors.orange,
-                  ),
-                ),
-                // Table side
-              ],
+    return GestureDetector(
+      onTap: () {
+        Get.find<TableSideController>().closeSearch();
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
+        body: Column(
+          children: [
+            const TopSide(),
+            Flexible(
+              flex: 30,
+              child: Row(
+                children: const [
+                  LeftSide(),
+                  TableSide(),
+                ],
+              ),
             ),
-          ),
-          Container(
-            height: 80.0,
-            width: double.infinity,
-            color: Colors.blue,
-          ),
-          // Bottom side,
-        ],
+            // const BottomSide(),
+          ],
+        ),
       ),
     );
   }
