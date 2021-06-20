@@ -22,4 +22,11 @@ class TableSideController extends GetxController {
     }
     update();
   }
+
+  void onChangeSearch(String? input) {}
+
+  void onSubmittedSearch(String? input) {}
+
+  /// Add header for table
+  void addHeader() {}
 }

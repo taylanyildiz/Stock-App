@@ -3,30 +3,31 @@ import 'package:get/get.dart';
 import 'package:stock_app/controllers/controller.dart';
 import 'package:stock_app/widgets/widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends GetView<HomeScreenController> {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Get.find<TableSideController>().closeSearch();
-        FocusScope.of(context).unfocus();
-      },
+      onTap: () => controller.unFocus(context),
       child: Scaffold(
-        body: Column(
+        body: Stack(
           children: [
-            const TopSide(),
-            Flexible(
-              flex: 30,
-              child: Row(
-                children: const [
-                  LeftSide(),
-                  TableSide(),
-                ],
-              ),
+            Column(
+              children: [
+                const TopSide(),
+                Flexible(
+                  flex: 30,
+                  child: Row(
+                    children: const [
+                      LeftSide(),
+                      TableSide(),
+                    ],
+                  ),
+                ),
+                // const BottomSide(),
+              ],
             ),
-            // const BottomSide(),
           ],
         ),
       ),

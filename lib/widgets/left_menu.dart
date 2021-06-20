@@ -15,11 +15,10 @@ class LeftMenu extends GetView<LeftSideController> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.black.withOpacity(.9),
+          color: Colors.black.withOpacity(.4),
           child: Stack(
             children: [
               _buildSelectIndicator(),
-              _buildHoverIndicator(),
               Column(
                 children: [
                   _MenuItems(
@@ -89,21 +88,6 @@ class LeftMenu extends GetView<LeftSideController> {
         ),
       ),
     );
-  }
-
-  Widget _buildHoverIndicator() {
-    return controller.isShowExpain
-        ? AnimatedPositioned(
-            duration: const Duration(milliseconds: 100),
-            top: (Get.width * .045) * controller.hoverItemsIndex,
-            left: Get.width * .022,
-            child: Container(
-              width: 3.0,
-              height: Get.width * .044,
-              color: Colors.grey,
-            ),
-          )
-        : const SizedBox.shrink();
   }
 
   Widget _buildSelectIndicator() {

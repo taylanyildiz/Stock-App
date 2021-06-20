@@ -10,3 +10,5 @@ export 'select_components.dart';
 export 'select_components_header.dart';
 export 'left_side_check.dart';
 export 'data_table.dart';
+export 'primary_button.dart';
+export './edit_table/edit_table.dart';

@@ -4,7 +4,7 @@ import 'package:stock_app/controllers/controller.dart';
 import 'package:stock_app/widgets/widget.dart';
 
 class SelectComponents extends GetView<LeftSideController> {
-  SelectComponents({Key? key}) : super(key: key);
+  const SelectComponents({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +19,15 @@ class SelectComponents extends GetView<LeftSideController> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SelectComponentsHeader(),
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                width: double.infinity,
+                height: 3.0,
+                color: Colors.white,
+              ),
               Expanded(
                 child: Container(
+                  margin: const EdgeInsets.only(top: 20.0),
                   child: Scrollbar(
                     isAlwaysShown: true,
                     controller: controller.scrollController,
@@ -48,15 +55,9 @@ class SelectComponents extends GetView<LeftSideController> {
       hoverColor: Colors.red,
       child: Container(
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: controller.selectComponent[index]
-                  ? Colors.grey.withOpacity(.1)
-                  : Colors.transparent,
-              offset: const Offset(0.0, 0.0),
-              blurRadius: 0,
-            ),
-          ],
+          color: controller.selectComponent[index]
+              ? Colors.grey.withOpacity(.1)
+              : Colors.transparent,
         ),
         padding: const EdgeInsets.symmetric(
           horizontal: 10.0,

@@ -21,18 +21,15 @@ class TopMenuButton extends StatelessWidget {
       hoverColor: Colors.grey,
       onTap: () => _onPressed(),
       child: Container(
-        padding: const EdgeInsets.only(
-          left: 20.0,
-          bottom: 5.0,
-          top: 5.0,
-          right: 20.0,
-        ),
-        child: Text(
-          title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 10.0,
-            fontWeight: FontWeight.bold,
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Center(
+          child: Text(
+            title,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 10.0,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),

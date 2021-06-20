@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:stock_app/controllers/controller.dart';
 import 'package:stock_app/widgets/widget.dart';
 
-class TopSide extends StatelessWidget {
+class TopSide extends GetView<TopSideController> {
   const TopSide({Key? key}) : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class TopSide extends StatelessWidget {
               title: 'File',
             ),
             TopMenuButton(
-              onPressed: () => print('file'),
+              onPressed: () => print('search'),
               title: 'Edit',
             ),
             TopMenuButton(

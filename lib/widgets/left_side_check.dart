@@ -18,7 +18,7 @@ class LeftSideCheck extends GetView<LeftSideController> {
   Widget _buildLeftSideScroll(int selectItems) {
     switch (selectItems) {
       case 0:
-        return SelectComponents();
+        return const SelectComponents();
       case 1:
         return Container();
       case 2:
