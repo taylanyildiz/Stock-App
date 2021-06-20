@@ -10,6 +10,11 @@ class DataTables extends GetView<TableSideController> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.grey,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+    );
   }
 }
